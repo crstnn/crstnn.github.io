@@ -1,7 +1,7 @@
 ---
 layout: home
 title:
-landing-title: "Cristian Corrado"
+landing-title: Home
 description: null
 image: null
 author: null
