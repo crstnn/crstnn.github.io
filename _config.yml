@@ -4,7 +4,7 @@ subtitle:
 email:
 description: A personal website
 baseurl: "/home" # the subpath of your site, e.g. /blog
-url: # the base hostname & protocol for your site
+url: "https://crstnn.github.io/website/" # the base hostname & protocol for your site
 author:
 
 
