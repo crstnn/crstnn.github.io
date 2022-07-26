@@ -3,7 +3,7 @@ title: Cristian Corrado
 subtitle: 
 email:
 description: personal website
-baseurl: / # the subpath of your site, e.g. /blog
+baseurl: # the subpath of your site, e.g. /blog
 url: https://crstnn.github.io # the base hostname & protocol for your site
 author:
 
