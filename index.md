@@ -1,7 +1,7 @@
 ---
-layout: home
+layout: Homepage
 title:
-landing-title: Home
+landing-title: Homepage
 description: null
 image: null
 author: null
