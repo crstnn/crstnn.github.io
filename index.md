@@ -1,5 +1,5 @@
 ---
-layout: Homepage
+layout: home
 title:
 landing-title: Homepage
 description: null
