@@ -1,8 +1,8 @@
 # site settings
-title: CC's Website
+title: "CC's Website"
 subtitle: 
 email:
-description: Cristian Corrado's personal website
+description: "Cristian Corrado's personal website"
 baseurl: # the subpath of your site, e.g. /blog
 url: https://crstnn.github.io # the base hostname & protocol for your site
 author:
