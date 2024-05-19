@@ -1,0 +1,52 @@
+body {
+    font-family:  Helvetica, Geneva, Verdana, sans-serif;
+    background-image: url('assets/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #959595;
+}
+.links a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0073b1;
+    padding: 15px 30px;
+    margin: 10px auto;
+    border-radius: 25px;
+    font-size: 1.1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+}
+.links a img {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+.links a.github {
+    background-color: #333;
+}
+.links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
