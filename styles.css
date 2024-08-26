@@ -1,5 +1,6 @@
 body {
-    font-family:  Helvetica, Geneva, Verdana, sans-serif;
+    font-family: "Zen Maru Gothic", Helvetica, serif;
+    font-style: normal;
     background-color: #07161D;
     margin: 0;
 }
@@ -35,8 +36,9 @@ body {
 }
 
 h1 {
+    font-weight: 500;
     margin-bottom: 30px;
-    font-size: 1.6em;
+    font-size: 2em;
     color: #b1b1b1;
 }
 
