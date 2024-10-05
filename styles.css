@@ -3,37 +3,68 @@ body {
     font-style: normal;
     background-color: #07161D;
     margin: 0;
+    background-image: url('assets/background.jpg');
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
 }
 
 #mainContainer {
-    background-image: url('assets/background.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    -webkit-animation: fadeIn 2s;
-    animation: fadeIn 2s;
 }
 
-.linkContainer {
+.linkContainer{
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    background: #041522;
     text-align: center;
-    backdrop-filter: blur(6px) brightness(0.7);
-    -webkit-backdrop-filter: blur(6px) contrast(55%);
-    margin: 10px;
-    padding: 20px 40px 40px 40px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    animation: fadeIn 1s forwards;
+    border-radius: 10px;
+    position: relative;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0.2;}
-    to {opacity: 1;}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.linkContainer::after, .linkContainer::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(var(--angle), #3a94b8, #26478a, #2f007f);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 4s spin linear infinite;
+}
+
+.linkContainer::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+    transition: all 1s ease;
+}
+
+.linkContainer:hover:before{
+    opacity: 0.7;
+    filter: blur(9rem);
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
 }
 
 h1 {
