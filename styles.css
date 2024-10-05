@@ -4,18 +4,6 @@ body {
     background-color: #07161D;
     margin: 0;
 }
-.linkContainer {
-    text-align: center;
-
-    backdrop-filter: blur(6px) brightness(0.7);
-    -webkit-backdrop-filter: blur(6px) contrast(55%);
-    margin: 10px;
-    padding: 20px 40px 40px 40px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
 
 #mainContainer {
     background-image: url('assets/background.jpg');
@@ -27,9 +15,20 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-
     -webkit-animation: fadeIn 2s;
     animation: fadeIn 2s;
+}
+
+.linkContainer {
+    text-align: center;
+    backdrop-filter: blur(6px) brightness(0.7);
+    -webkit-backdrop-filter: blur(6px) contrast(55%);
+    margin: 10px;
+    padding: 20px 40px 40px 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
