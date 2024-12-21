@@ -16,7 +16,7 @@ body {
     height: 100vh;
 }
 
-.linkContainer{
+.linkContainer {
     margin: 0 auto;
     padding: 2em;
     width: 300px;
@@ -26,13 +26,13 @@ body {
     position: relative;
 }
 
-@property --angle{
+@property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
 }
 
-.linkContainer::after, .linkContainer::before{
+.linkContainer::after, .linkContainer::before {
     content: '';
     position: absolute;
     height: 100%;
@@ -47,22 +47,22 @@ body {
     animation: 4s spin linear infinite;
 }
 
-.linkContainer::before{
+.linkContainer::before {
     filter: blur(1.5rem);
     opacity: 0.5;
     transition: all 1s ease;
 }
 
-.linkContainer:hover:before{
+.linkContainer:hover:before {
     opacity: 0.7;
     filter: blur(9rem);
 }
 
-@keyframes spin{
-    from{
+@keyframes spin {
+    from {
         --angle: 0deg;
     }
-    to{
+    to {
         --angle: 360deg;
     }
 }

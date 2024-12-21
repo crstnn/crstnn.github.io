@@ -2,46 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Cristian's Link Stack</title>
-    <meta name="description" content="Cristian Corrado's personal website and link stack." />
-    <link rel="preload" as="image" href="assets/background.jpg">
+    <meta content="Cristian Corrado's personal website and link stack." name="description"/>
+    <link as="image" href="assets/background.jpg" rel="preload">
     <script type="text/javascript">
-        (new Image()).src="assets/background.jpg";
+        (new Image()).src = "assets/background.jpg";
     </script>
-    <meta name="google-site-verification" content="UrXLvMooxwvBJtq-qSQiPTbWOguEVIZvfQqtBFBPN0A" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="assets/manifest.json">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <meta content="UrXLvMooxwvBJtq-qSQiPTbWOguEVIZvfQqtBFBPN0A" name="google-site-verification"/>
+    <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="assets/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="assets/manifest.json" rel="manifest">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap"
+          rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRMJNKFWMD"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-HRMJNKFWMD');
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-HRMJNKFWMD');
 </script>
 <body>
-    <div id="mainContainer">
-        <div class="linkContainer">
-            <h1>Cristian Corrado</h1>
-            <h2>Link stack</h2>
-            <div class="links">
-                <a href="https://www.linkedin.com/in/cristiancorrado" target="_blank" class="linkedin">
-                    <img src="assets/linkedin.svg" alt="LinkedIn logo">LinkedIn
-                </a>
-                <a href="https://github.com/crstnn" target="_blank" class="github">
-                    <img src="assets/github-mark-white.svg" alt="GitHub mark">GitHub
-                </a>
-            </div>
+<div id="mainContainer">
+    <div class="linkContainer">
+        <h1>Cristian Corrado</h1>
+        <h2>Link stack</h2>
+        <div class="links">
+            <a class="linkedin" href="https://www.linkedin.com/in/cristiancorrado" target="_blank">
+                <img alt="LinkedIn logo" src="assets/linkedin.svg">LinkedIn
+            </a>
+            <a class="github" href="https://github.com/crstnn" target="_blank">
+                <img alt="GitHub mark" src="assets/github-mark-white.svg">GitHub
+            </a>
         </div>
     </div>
+</div>
 </body>
 </html>
