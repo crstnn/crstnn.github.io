@@ -18,11 +18,11 @@ body {
 
 .linkContainer {
     margin: 0 auto;
-    padding: 2em;
-    width: 300px;
+    padding: 2rem;
+    width: 18.75rem;
     background: #041522;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     position: relative;
 }
 
@@ -42,8 +42,8 @@ body {
     left: 50%;
     translate: -50% -50%;
     z-index: -1;
-    padding: 3px;
-    border-radius: 10px;
+    padding: 0.1875rem;
+    border-radius: 0.625rem;
     animation: 4s spin linear infinite;
 }
 
@@ -69,13 +69,13 @@ body {
 
 h1 {
     font-weight: 500;
-    font-size: 1.9em;
+    font-size: 1.9rem;
     color: #b1b1b1;
 }
 
 h2 {
     font-weight: 500;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     color: #b1b1b1;
 }
 
@@ -85,22 +85,22 @@ h2 {
     align-items: center;
     text-decoration: none;
     color: #fff;
-    padding: 15px 30px;
-    margin: 10px auto;
-    border-radius: 25px;
-    font-size: 1.1em;
+    padding: 0.9375rem 1.875rem;
+    margin: 0.625rem auto;
+    border-radius: 1.5625rem;
+    font-size: 1.1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 200px;
+    width: 12.5rem;
 }
 
 .links {
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 
 .links a img {
-    margin-right: 10px;
-    width: 24px;
-    height: 24px;
+    margin-right: 0.625rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .links a.github {
@@ -112,6 +112,7 @@ h2 {
 }
 
 .links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 0.5rem 0.9375rem rgba(0, 0, 0, 0.2);
 }
+
