@@ -55,7 +55,7 @@ body {
 
 .linkContainer:hover:before {
     opacity: 0.7;
-    filter: blur(9rem);
+    filter: blur(7rem);
 }
 
 @keyframes spin {
@@ -85,10 +85,10 @@ h2 {
     align-items: center;
     text-decoration: none;
     color: #fff;
-    padding: 0.9375rem 1.875rem;
-    margin: 0.625rem auto;
-    border-radius: 1.5625rem;
-    font-size: 1.1rem;
+    padding: 1rem 1.875rem;
+    margin: 1rem auto;
+    border-radius: 1.2rem;
+    font-size: 1.2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 12.5rem;
 }
