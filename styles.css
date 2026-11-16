@@ -1,6 +1,9 @@
 /* ---------- Base ---------- */
 
+/* Everything is sized in rem, so growing the root size scales the whole layout
+   on wide screens (16px up to ~1440px wide, reaching 22px at ~2800px). */
 html {
+    font-size: clamp(1rem, 0.5rem + 0.5vw, 1.375rem);
     scroll-behavior: smooth;
 }
 
@@ -316,7 +319,7 @@ h1 {
 
 .projects {
     width: 100%;
-    max-width: 56rem;
+    max-width: 64rem;
     margin: 2rem 0 4rem;
     scroll-margin-top: 2rem;
     text-align: center;
@@ -347,7 +350,7 @@ h1 {
 
 .projectGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));
     gap: 1rem;
     text-align: left;
 }
