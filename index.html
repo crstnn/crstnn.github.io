@@ -5,10 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Cristian's Link Stack</title>
     <meta content="Cristian Corrado's personal website and link stack." name="description"/>
-    <link as="image" href="assets/background.jpg" rel="preload">
-    <script type="text/javascript">
-        (new Image()).src = "assets/background.jpg";
-    </script>
+    <link as="image" fetchpriority="high" href="assets/background.webp" rel="preload" type="image/webp">
     <meta content="UrXLvMooxwvBJtq-qSQiPTbWOguEVIZvfQqtBFBPN0A" name="google-site-verification"/>
     <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
@@ -19,33 +16,145 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap"
           rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRMJNKFWMD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-HRMJNKFWMD');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HRMJNKFWMD"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-HRMJNKFWMD');
-</script>
 <body>
-<div id="mainContainer">
-    <div class="linkContainer">
+<div aria-hidden="true" class="bg bg-placeholder"></div>
+<div aria-hidden="true" class="bg bg-full"></div>
+<script>
+    (function () {
+        var full = document.querySelector('.bg-full');
+        var img = new Image();
+        var reveal = function () {
+            full.classList.add('loaded');
+        };
+        img.onload = reveal; // always fade in, even when cached, for a consistent feel
+        img.onerror = function () {
+            // WebP failed (unsupported or missing): fall back to the original JPEG once.
+            img.onerror = null;
+            full.style.backgroundImage = "url('assets/background.jpg')";
+            img.src = 'assets/background.jpg';
+        };
+        img.src = 'assets/background.webp';
+    })();
+</script>
+<main id="mainContainer">
+    <div class="hero">
+    <div class="linkContainer card">
         <h1>Cristian Corrado</h1>
+        <p class="tagline">Software Engineer · Econometrics</p>
         <div class="links">
-            <a class="linkedin" href="https://www.linkedin.com/in/cristiancorrado" target="_blank">
-                <img alt="LinkedIn logo" src="assets/linkedin.svg">LinkedIn
+            <a class="linkedin" href="https://www.linkedin.com/in/cristiancorrado" rel="noopener" target="_blank">
+                <img alt="" src="assets/linkedin.svg">LinkedIn
             </a>
-            <a class="github" href="https://github.com/crstnn" target="_blank">
-                <img alt="GitHub mark" src="assets/github-mark-white.svg">GitHub
+            <a class="github" href="https://github.com/crstnn" rel="noopener" target="_blank">
+                <img alt="" src="assets/github-mark-white.svg">GitHub
+            </a>
+            <!-- Address is assembled on click so it never appears in the HTML for scrapers. -->
+            <a class="email" data-contact="bW9jLmxpYW1nQG9kYXJyb2MubnRzcmM=" href="#" role="button">
+                <img alt="" src="assets/email.svg">Email
             </a>
         </div>
     </div>
-</div>
+
+    <a aria-label="Scroll to projects" class="scrollHint" href="#projects">
+        <span>Projects</span>
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+             stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </a>
+    </div>
+
+    <section aria-labelledby="projectsHeading" class="projects" id="projects">
+        <h2 id="projectsHeading">Projects</h2>
+        <div class="projectGrid">
+            <a class="project" href="https://bnfiltering.com/" rel="noopener" target="_blank">
+                <h3>Beveridge-Nelson Filter</h3>
+                <p>Web interface (frontend and backend) for the Beveridge-Nelson filter, including the full BN filter model in R.</p>
+                <span class="tags"><span>JavaScript</span><span>R</span><span>Live site</span></span>
+            </a>
+            <a class="project" href="https://outputgapnow.com/" rel="noopener" target="_blank">
+                <h3>Nowcasting the US Output Gap</h3>
+                <p>Frontend for a project that nowcasts the US output gap.</p>
+                <span class="tags"><span>JavaScript</span><span>Live site</span></span>
+            </a>
+            <a class="project" href="https://github.com/crstnn/UkkonensSuffixTree" rel="noopener" target="_blank">
+                <h3>Ukkonen's Suffix Tree</h3>
+                <p>Linear-time suffix tree construction, with generalised and non-generalised versions.</p>
+                <span class="tags"><span>Python</span><span>Algorithms</span></span>
+            </a>
+            <a class="project" href="https://github.com/crstnn/LZ77Compression" rel="noopener" target="_blank">
+                <h3>LZ77 Compression</h3>
+                <p>Lempel-Ziv 77 compression using Huffman and Elias omega coding.</p>
+                <span class="tags"><span>Python</span><span>Compression</span></span>
+            </a>
+            <a class="project" href="https://github.com/crstnn/WirelessBushfireSensorNetwork" rel="noopener" target="_blank">
+                <h3>Wireless Bushfire Sensor Network</h3>
+                <p>Simulated sensor network that talks to satellites to detect bushfires, built with POSIX threads and OpenMPI.</p>
+                <span class="tags"><span>C</span><span>MPI</span></span>
+            </a>
+            <a class="project" href="https://github.com/crstnn/Pong" rel="noopener" target="_blank">
+                <h3>Pong + Breakout</h3>
+                <p>Pong with a Breakout mode, written in a functional style with RxJS Observables.</p>
+                <span class="tags"><span>TypeScript</span><span>RxJS</span></span>
+            </a>
+        </div>
+        <a class="more" href="https://github.com/crstnn?tab=repositories" rel="noopener" target="_blank">See all repositories →</a>
+    </section>
+</main>
+<script>
+    (function () {
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var cards = document.querySelectorAll('.project');
+
+        // Reveal cards as they scroll into view, staggered left-to-right.
+        if (!reduceMotion && 'IntersectionObserver' in window) {
+            document.documentElement.classList.add('js-reveal');
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    var index = Array.prototype.indexOf.call(cards, entry.target);
+                    entry.target.style.transitionDelay = (index % 3) * 90 + 'ms';
+                    entry.target.classList.add('visible');
+                    // Drop the stagger afterwards so hover effects respond instantly.
+                    entry.target.addEventListener('transitionend', function () {
+                        entry.target.style.transitionDelay = '';
+                    }, {once: true});
+                    observer.unobserve(entry.target);
+                });
+            }, {threshold: 0.15});
+            cards.forEach(function (card) {
+                observer.observe(card);
+            });
+        }
+
+        // Scroll hint: hidden while the projects are on screen, back again at the top.
+        var hint = document.querySelector('.scrollHint');
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+                hint.classList.toggle('hidden', entries[0].isIntersecting);
+            }).observe(document.getElementById('projects'));
+        }
+
+        // Email: decode (base64 of the reversed address) only when a person clicks.
+        var email = document.querySelector('.links a.email');
+        email.addEventListener('click', function (event) {
+            event.preventDefault();
+            var address = atob(email.dataset.contact).split('').reverse().join('');
+            window.location.href = 'mailto:' + address;
+        });
+    })();
+</script>
 </body>
 </html>
