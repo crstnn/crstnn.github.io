@@ -1,7 +1,7 @@
 body {
-    font-family: "Zen Maru Gothic", Helvetica, serif;
-    font-style: normal;
+    font-family: "Zen Maru Gothic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     background-color: #07161D;
+    color: #e8eef2;
     margin: 0;
     min-height: 100vh;
 }
@@ -50,6 +50,7 @@ body {
 .hero {
     position: relative;
     width: 100%;
+    min-height: 100vh; /* fallback for browsers without svh */
     min-height: 100svh;
     box-sizing: border-box;
     padding: 2.5rem 0 5.5rem;
@@ -116,19 +117,45 @@ h1 {
     margin: 0.5rem 0 0;
 }
 
-.tagline {
+.role {
     margin: 0.5rem 0 0;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #e8eef2;
+}
+
+/* Two focus areas: icon + text rows, left-aligned inside a subtle panel */
+.focus {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin: 1rem 0 0;
+    padding: 0.75rem 1rem;
+    list-style: none;
+    text-align: left;
+    border-radius: 0.75rem;
+    background: rgba(58, 148, 184, 0.08);
+    box-shadow: inset 0 0 0 0.0625rem rgba(58, 148, 184, 0.2);
+}
+
+.focus li {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.88rem;
+    line-height: 1.3;
+    color: #d3dee5;
+}
+
+.focus svg {
+    flex-shrink: 0;
+    width: 1.125rem;
+    height: 1.125rem;
     color: #8cc8e0;
 }
 
-h2 {
-    font-weight: 500;
-    font-size: 1.1rem;
-    color: #b1b1b1;
-}
 
-.links a {
+.links > a, .links > button {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -140,13 +167,20 @@ h2 {
     font-size: 1.2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 12.5rem;
+    box-sizing: content-box;
+}
+
+.links > button {
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
 }
 
 .links {
     margin-top: 1.5rem;
 }
 
-.links a img {
+.links > a img, .links > button img {
     margin-right: 0.625rem;
     width: 1.5rem;
     height: 1.5rem;
@@ -160,13 +194,15 @@ h2 {
     background-color: #0072b1;
 }
 
-.links a.email {
+.links > button.email {
     background-color: #26478a;
 }
 
-.links a:hover {
-    transform: translateY(-0.1875rem);
-    box-shadow: 0 0.5rem 0.9375rem rgba(0, 0, 0, 0.2);
+@media (hover: hover) {
+    .links > a:hover, .links > button:hover {
+        transform: translateY(-0.1875rem);
+        box-shadow: 0 0.5rem 0.9375rem rgba(0, 0, 0, 0.2);
+    }
 }
 
 
@@ -180,6 +216,8 @@ h2 {
 }
 
 .projects h2 {
+    font-weight: 500;
+    color: #e8eef2;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     text-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.6);
@@ -204,10 +242,18 @@ h2 {
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project:hover, .project:focus-visible {
+.project:focus-visible {
     transform: translateY(-0.1875rem);
     border-color: #3a94b8;
     box-shadow: 0 0.5rem 1.5rem rgba(38, 71, 138, 0.35);
+}
+
+@media (hover: hover) {
+    .project:hover {
+        transform: translateY(-0.1875rem);
+        border-color: #3a94b8;
+        box-shadow: 0 0.5rem 1.5rem rgba(38, 71, 138, 0.35);
+    }
 }
 
 .project h4 {
@@ -275,7 +321,8 @@ h2 {
 
 .scrollHint.hidden {
     opacity: 0;
-    pointer-events: none;
+    visibility: hidden; /* also removes it from keyboard focus */
+    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
 }
 
 @keyframes bob {
@@ -303,12 +350,18 @@ html {
     transform: none;
 }
 
-.js-reveal .project.visible:hover, .js-reveal .project.visible:focus-visible {
+.js-reveal .project.visible:focus-visible {
     transform: translateY(-0.1875rem);
 }
 
+@media (hover: hover) {
+    .js-reveal .project.visible:hover {
+        transform: translateY(-0.1875rem);
+    }
+}
+
 /* Keyboard focus */
-.links a:focus-visible, .project:focus-visible, .more:focus-visible, .scrollHint:focus-visible {
+.links a:focus-visible, .links button:focus-visible, .project:focus-visible, .more:focus-visible, .scrollHint:focus-visible {
     outline: 0.125rem solid #8cc8e0;
     outline-offset: 0.1875rem;
 }
@@ -320,6 +373,16 @@ html {
 
     .scrollHint svg {
         animation: none;
+    }
+
+    .linkContainer::after, .linkContainer::before {
+        animation: none;
+    }
+
+    .js-reveal .project {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }
 
@@ -360,4 +423,123 @@ html {
     vertical-align: middle;
     background: #26478a;
     color: #fff;
+}
+
+/* Email reveal panel: collapsed until the Email button is clicked */
+.emailPanel {
+    display: grid;
+    grid-template-rows: 0fr;
+    width: 16.25rem;
+    margin: -0.5rem auto 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: grid-template-rows 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s, margin 0.3s ease;
+}
+
+.emailPanel.open {
+    grid-template-rows: 1fr;
+    margin: -0.25rem auto 1rem;
+    opacity: 1;
+    visibility: visible;
+    transition: grid-template-rows 0.3s ease, opacity 0.3s ease, visibility 0s, margin 0.3s ease;
+}
+
+
+.emailAddress {
+    display: block;
+    padding: 0.875rem 0.75rem 0.5rem;
+    color: #fff;
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+    user-select: all;
+}
+
+.emailActions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-bottom: 0.875rem;
+}
+
+.emailPanelInner {
+    overflow: hidden;
+    border-radius: 1rem;
+    background: rgba(38, 71, 138, 0.25);
+    box-shadow: inset 0 0 0 0.0625rem rgba(58, 148, 184, 0.35);
+}
+
+.copyEmail, .openMail {
+    min-width: 5.5rem;
+    padding: 0.4rem 0.9rem;
+    border: none;
+    border-radius: 1rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.copyEmail {
+    background: #3a94b8;
+    color: #041522;
+    font-weight: 700;
+}
+
+.copyEmail:hover {
+    background: #5aaed0;
+}
+
+.openMail {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e8eef2;
+}
+
+.openMail:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.copyEmail:focus-visible, .openMail:focus-visible {
+    outline: 0.125rem solid #8cc8e0;
+    outline-offset: 0.125rem;
+}
+
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .emailPanel, .emailPanel.open {
+        transition: none;
+    }
+}
+
+/* Narrow phones: tighter card padding so each focus line stays on one row */
+@media (max-width: 26rem) {
+    .linkContainer {
+        padding: 1.75rem 1rem;
+        max-width: calc(100% - 2rem);
+    }
+
+    .focus {
+        padding: 0.7rem 0.75rem;
+    }
+
+    .focus li {
+        font-size: 0.82rem;
+    }
+}
+
+.siteFooter {
+    padding: 0 1rem 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #8a9ba6;
+    text-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.6);
 }

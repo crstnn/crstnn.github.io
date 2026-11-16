@@ -1,21 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Cristian's Link Stack</title>
-    <meta content="Cristian Corrado's personal website and link stack." name="description"/>
+    <title>Cristian Corrado · Senior Software Engineer</title>
+    <meta content="Cristian Corrado, Senior Software Engineer: engineering better health experiences and building econometrics tools for central banks." name="description">
+    <link href="https://crstnn.github.io/" rel="canonical">
+    <meta content="#07161D" name="theme-color">
+    <!-- Link previews (LinkedIn, Slack, etc.) -->
+    <meta content="website" property="og:type">
+    <meta content="https://crstnn.github.io/" property="og:url">
+    <meta content="Cristian Corrado · Senior Software Engineer" property="og:title">
+    <meta content="Engineering better health experiences and building econometrics tools for central banks." property="og:description">
+    <meta content="https://crstnn.github.io/assets/android-chrome-512x512.png" property="og:image">
+    <meta content="summary" name="twitter:card">
     <link as="image" fetchpriority="high" href="assets/background.webp" rel="preload" type="image/webp">
     <meta content="UrXLvMooxwvBJtq-qSQiPTbWOguEVIZvfQqtBFBPN0A" name="google-site-verification"/>
     <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
     <link href="assets/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="assets/favicon.ico" rel="icon" sizes="any">
     <link href="assets/manifest.json" rel="manifest">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
           rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Cristian Corrado",
+            "jobTitle": "Senior Software Engineer",
+            "url": "https://crstnn.github.io/",
+            "sameAs": ["https://www.linkedin.com/in/cristiancorrado", "https://github.com/crstnn"]
+        }
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRMJNKFWMD"></script>
     <script>
@@ -52,9 +72,27 @@
 </script>
 <main id="mainContainer">
     <div class="hero">
-    <div class="linkContainer card">
+        <div class="linkContainer">
         <h1>Cristian Corrado</h1>
-        <p class="tagline">Software Engineer · Econometrics</p>
+        <p class="role">Senior Software Engineer</p>
+        <ul class="focus">
+            <li>
+                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round"
+                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M19.5 13.5 12 21l-7.5-7.5A4.95 4.95 0 0 1 12 6.6a4.95 4.95 0 0 1 7.5 6.9Z"/>
+                    <path d="M3 12h4.5l1.5-2.5 2.5 5 2-3.5h7.5"/>
+                </svg>
+                Engineering better health experiences
+            </li>
+            <li>
+                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round"
+                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 3v18h18"/>
+                    <path d="m7 15 4-4 3 3 6-6"/>
+                </svg>
+                Econometrics tools for central banks
+            </li>
+        </ul>
         <div class="links">
             <a class="linkedin" href="https://www.linkedin.com/in/cristiancorrado" rel="noopener" target="_blank">
                 <img alt="" src="assets/linkedin.svg">LinkedIn
@@ -63,9 +101,20 @@
                 <img alt="" src="assets/github-mark-white.svg">GitHub
             </a>
             <!-- Address is assembled on click so it never appears in the HTML for scrapers. -->
-            <a class="email" data-contact="bW9jLmxpYW1nQG9kYXJyb2MubnRzcmM=" href="#" role="button">
+            <button aria-controls="emailPanel" aria-expanded="false" class="email"
+                    data-contact="bW9jLmxpYW1nQG9kYXJyb2MubnRzcmM=" type="button">
                 <img alt="" src="assets/email.svg">Email
-            </a>
+            </button>
+            <div class="emailPanel" id="emailPanel">
+                <div class="emailPanelInner">
+                    <span class="emailAddress"></span>
+                    <div class="emailActions">
+                        <button class="copyEmail" type="button">Copy</button>
+                        <a class="openMail" href="#">Open mail</a>
+                    </div>
+                </div>
+            </div>
+            <span aria-live="polite" class="srOnly" id="emailStatus"></span>
         </div>
     </div>
 
@@ -80,6 +129,11 @@
         <h2 id="projectsHeading">Projects</h2>
         <h3 class="groupHeading">Econometrics research software</h3>
         <div class="projectGrid">
+            <article class="project wip">
+                <h4>Bayesian Local Projections <span class="badge">TBC</span></h4>
+                <p>Web tool for the Bayesian local projections of Javed and Morley (2026): impulse responses with shape priors, from your own data or FRED series.</p>
+                <span class="tags"><span>React</span><span>Python</span><span>MATLAB &rarr; C</span><span>In progress</span></span>
+            </article>
             <a class="project" href="https://bnfiltering.com/" rel="noopener" target="_blank">
                 <h4>Beveridge-Nelson Filter</h4>
                 <p>Web tool for the Beveridge-Nelson filter, which splits a time series into trend and cycle. Runs the full BN filter model in R behind a Python backend.</p>
@@ -90,34 +144,64 @@
                 <p>Live nowcasts of the US output gap from a mixed-frequency Bayesian VAR, built with Dr. Benjamin Wong, Prof. James Morley and Prof. Tino Berger.</p>
                 <span class="tags"><span>JavaScript</span><span>C</span><span>MATLAB</span><span>Live site</span></span>
             </a>
-            <article class="project wip">
-                <h4>Bayesian Local Projections <span class="badge">TBC</span></h4>
-                <p>Web tool for the Bayesian local projections of Javed and Morley (2026): impulse responses with shape priors, from your own data or FRED series.</p>
-                <span class="tags"><span>React</span><span>Python</span><span>MATLAB &rarr; C</span><span>In progress</span></span>
-            </article>
         </div>
 
-        <h3 class="groupHeading">Other projects</h3>
+        <h3 class="groupHeading">Algorithms</h3>
+        <div class="projectGrid">
+            <a class="project" href="https://github.com/crstnn/MinimumSpanningTree" rel="noopener" target="_blank">
+                <h4>Best &amp; Second-Best MST</h4>
+                <p>Kruskal's algorithm with a union-by-height, path-compressed disjoint set, and the second-best MST found via lowest common ancestors.</p>
+                <span class="tags"><span>Python</span><span>Graphs</span></span>
+            </a>
+            <a class="project" href="https://github.com/crstnn/UkkonensSuffixTree" rel="noopener" target="_blank">
+                <h4>Ukkonen's Suffix Tree</h4>
+                <p>Linear-time suffix tree construction, in both generalised and non-generalised versions.</p>
+                <span class="tags"><span>Python</span><span>Strings</span></span>
+            </a>
+            <a class="project" href="https://github.com/crstnn/BoyerMoorePatternMatching" rel="noopener" target="_blank">
+                <h4>Boyer-Moore Pattern Matching</h4>
+                <p>Sublinear-time pattern matching, preprocessed with Gusfield's Z-algorithm, plus Hamming-distance approximate matching.</p>
+                <span class="tags"><span>Python</span><span>Strings</span></span>
+            </a>
+            <a class="project" href="https://github.com/crstnn/LZ77Compression" rel="noopener" target="_blank">
+                <h4>LZ77 Compression</h4>
+                <p>Lempel-Ziv 77 compression with Huffman and Elias omega coding, for 8-bit ASCII files.</p>
+                <span class="tags"><span>Python</span><span>Compression</span></span>
+            </a>
+            <a class="project" href="https://github.com/crstnn/GoldbachsWeakConjecture" rel="noopener" target="_blank">
+                <h4>Goldbach's Weak Conjecture</h4>
+                <p>Searches for counterexamples using a Miller-Rabin probabilistic primality test built on fast modular exponentiation.</p>
+                <span class="tags"><span>Python</span><span>Number theory</span></span>
+            </a>
+            <a class="project" href="https://github.com/crstnn/VariousAlgorithms" rel="noopener" target="_blank">
+                <h4>Graph &amp; Dynamic Programming Algorithms</h4>
+                <p>Shallowest spanning tree, constrained shortest paths, a prefix trie and dynamic programming, plus sorting in MIPS assembly.</p>
+                <span class="tags"><span>Python</span><span>MIPS assembly</span></span>
+            </a>
+        </div>
+
+        <h3 class="groupHeading">Systems, tooling &amp; research</h3>
         <div class="projectGrid">
             <a class="project" href="https://github.com/crstnn/jsinspect-plus" rel="noopener" target="_blank">
                 <h4>jsinspect-plus</h4>
                 <p>Maintained fork of jsinspect, which finds copy-pasted and structurally similar code. Moved to Babel's modern parser with ES2020, TypeScript and TSX support.</p>
                 <span class="tags"><span>JavaScript</span><span>Open source</span><span>npm</span></span>
             </a>
-            <a class="project" href="https://github.com/crstnn/UkkonensSuffixTree" rel="noopener" target="_blank">
-                <h4>Ukkonen's Suffix Tree</h4>
-                <p>Linear-time suffix tree construction, with generalised and non-generalised versions.</p>
-                <span class="tags"><span>Python</span><span>Algorithms</span></span>
-            </a>
             <a class="project" href="https://github.com/crstnn/WirelessBushfireSensorNetwork" rel="noopener" target="_blank">
                 <h4>Wireless Bushfire Sensor Network</h4>
                 <p>Simulated sensor network that talks to satellites to detect bushfires, built with POSIX threads and OpenMPI.</p>
                 <span class="tags"><span>C</span><span>MPI</span><span>Parallel computing</span></span>
             </a>
+            <a class="project" href="https://github.com/crstnn/MassiveDissimilarityJudgementReport" rel="noopener" target="_blank">
+                <h4>Colour Dissimilarity Modelling</h4>
+                <p>Data pipeline and Bayesian multidimensional scaling of a large set of colour-similarity judgements, with model selection across metric spaces and dimensions.</p>
+                <span class="tags"><span>R</span><span>C++</span><span>Bayesian</span></span>
+            </a>
         </div>
         <a class="more" href="https://github.com/crstnn?tab=repositories" rel="noopener" target="_blank">See all repositories →</a>
     </section>
 </main>
+<footer class="siteFooter">© <span id="year">2026</span> Cristian Corrado</footer>
 <script>
     (function () {
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -144,6 +228,8 @@
             });
         }
 
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         // Scroll hint: hidden while the projects are on screen, back again at the top.
         var hint = document.querySelector('.scrollHint');
         if ('IntersectionObserver' in window) {
@@ -152,12 +238,56 @@
             }).observe(document.getElementById('projects'));
         }
 
-        // Email: decode (base64 of the reversed address) only when a person clicks.
-        var email = document.querySelector('.links a.email');
-        email.addEventListener('click', function (event) {
-            event.preventDefault();
-            var address = atob(email.dataset.contact).split('').reverse().join('');
-            window.location.href = 'mailto:' + address;
+        // Email: the address (base64 of it reversed) is only decoded when a person clicks,
+        // then shown with Copy and Open mail actions.
+        var emailButton = document.querySelector('.links button.email');
+        var panel = document.getElementById('emailPanel');
+        var addressEl = panel.querySelector('.emailAddress');
+        var copyButton = panel.querySelector('.copyEmail');
+        var openMail = panel.querySelector('.openMail');
+        var status = document.getElementById('emailStatus');
+        var address = null;
+        var resetTimer;
+
+        emailButton.addEventListener('click', function () {
+            if (!address) {
+                address = atob(emailButton.dataset.contact).split('').reverse().join('');
+                addressEl.textContent = address;
+                openMail.href = 'mailto:' + address;
+            }
+            var open = emailButton.getAttribute('aria-expanded') !== 'true';
+            emailButton.setAttribute('aria-expanded', String(open));
+            panel.classList.toggle('open', open);
+        });
+
+        function feedback(message) {
+            copyButton.textContent = message;
+            status.textContent = message;
+            clearTimeout(resetTimer);
+            resetTimer = setTimeout(function () {
+                copyButton.textContent = 'Copy';
+                status.textContent = '';
+            }, 2000);
+        }
+
+        function selectAddress() {
+            // Clipboard unavailable: select the text so it can be copied by hand.
+            var range = document.createRange();
+            range.selectNodeContents(addressEl);
+            var selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            feedback('Selected');
+        }
+
+        copyButton.addEventListener('click', function () {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(address).then(function () {
+                    feedback('Copied ✓');
+                }, selectAddress);
+            } else {
+                selectAddress();
+            }
         });
     })();
 </script>
