@@ -7,7 +7,6 @@
     <meta content="Cristian Corrado, Senior Software Engineer: engineering better health experiences and building econometrics tools for central banks." name="description">
     <link href="https://crstnn.github.io/" rel="canonical">
     <meta content="#07161D" name="theme-color">
-    <!-- Link previews (LinkedIn, Slack, etc.) -->
     <meta content="website" property="og:type">
     <meta content="https://crstnn.github.io/" property="og:url">
     <meta content="Cristian Corrado · Senior Software Engineer" property="og:title">
@@ -26,6 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
           rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <script defer src="script.js"></script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -53,76 +53,58 @@
 <body>
 <div aria-hidden="true" class="bg bg-placeholder"></div>
 <div aria-hidden="true" class="bg bg-full"></div>
-<script>
-    (function () {
-        var full = document.querySelector('.bg-full');
-        var img = new Image();
-        var reveal = function () {
-            full.classList.add('loaded');
-        };
-        img.onload = reveal; // always fade in, even when cached, for a consistent feel
-        img.onerror = function () {
-            // WebP failed (unsupported or missing): fall back to the original JPEG once.
-            img.onerror = null;
-            full.style.backgroundImage = "url('assets/background.jpg')";
-            img.src = 'assets/background.jpg';
-        };
-        img.src = 'assets/background.webp';
-    })();
-</script>
 <main id="mainContainer">
     <div class="hero">
         <div class="linkContainer">
-        <h1>Cristian Corrado</h1>
-        <p class="role">Senior Software Engineer</p>
-        <ul class="focus">
-            <li>
-                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round"
-                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M19.5 13.5 12 21l-7.5-7.5A4.95 4.95 0 0 1 12 6.6a4.95 4.95 0 0 1 7.5 6.9Z"/>
-                    <path d="M3 12h4.5l1.5-2.5 2.5 5 2-3.5h7.5"/>
-                </svg>
-                Engineering better health experiences
-            </li>
-            <li>
-                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round"
-                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M3 3v18h18"/>
-                    <path d="m7 15 4-4 3 3 6-6"/>
-                </svg>
-                Econometrics tools for central banks
-            </li>
-        </ul>
-        <div class="links">
-            <a class="linkedin" href="https://www.linkedin.com/in/cristiancorrado" rel="noopener" target="_blank">
-                <img alt="" src="assets/linkedin.svg">LinkedIn
-            </a>
-            <a class="github" href="https://github.com/crstnn" rel="noopener" target="_blank">
-                <img alt="" src="assets/github-mark-white.svg">GitHub
-            </a>
-            <!-- Address is assembled on click so it never appears in the HTML for scrapers. -->
-            <button aria-controls="emailPanel" aria-expanded="false" class="email"
-                    data-contact="bW9jLmxpYW1nQG9kYXJyb2MubnRzcmM=" type="button">
-                <img alt="" src="assets/email.svg">Email
-            </button>
-            <div class="emailPanel" id="emailPanel">
-                <div class="emailPanelInner">
-                    <span class="emailAddress"></span>
-                    <div class="emailActions">
-                        <button class="copyEmail" type="button">Copy</button>
-                        <a class="openMail" href="#">Open mail</a>
+            <h1>Cristian Corrado</h1>
+            <p class="role">Senior Software Engineer</p>
+            <ul class="focus">
+                <li>
+                    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round"
+                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M19.5 13.5 12 21l-7.5-7.5A4.95 4.95 0 0 1 12 6.6a4.95 4.95 0 0 1 7.5 6.9Z"/>
+                        <path d="M3 12h4.5l1.5-2.5 2.5 5 2-3.5h7.5"/>
+                    </svg>
+                    Engineering better health experiences
+                </li>
+                <li>
+                    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round"
+                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M3 3v18h18"/>
+                        <path d="m7 15 4-4 3 3 6-6"/>
+                    </svg>
+                    Econometrics tools for central banks
+                </li>
+            </ul>
+            <div class="links">
+                <a class="linkedin" href="https://www.linkedin.com/in/cristiancorrado" rel="noopener" target="_blank">
+                    <img alt="" src="assets/linkedin.svg">LinkedIn
+                </a>
+                <a class="github" href="https://github.com/crstnn" rel="noopener" target="_blank">
+                    <img alt="" src="assets/github-mark-white.svg">GitHub
+                </a>
+                <button aria-controls="emailPanel" aria-expanded="false" class="email"
+                        data-contact="bW9jLmxpYW1nQG9kYXJyb2MubnRzcmM=" type="button">
+                    <img alt="" src="assets/email.svg">Email
+                </button>
+                <div class="emailPanel" id="emailPanel">
+                    <div class="emailPanelInner">
+                        <span class="emailAddress"></span>
+                        <div class="emailActions">
+                            <button class="copyEmail" type="button">Copy</button>
+                            <a class="openMail" href="#">Open mail</a>
+                        </div>
                     </div>
                 </div>
+                <span aria-live="polite" class="srOnly" id="emailStatus"></span>
             </div>
-            <span aria-live="polite" class="srOnly" id="emailStatus"></span>
         </div>
-    </div>
 
-    <a aria-label="Scroll to projects" class="scrollHint" href="#projects">
-        <span>Projects</span>
-        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-             stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
-    </a>
+        <a aria-label="Scroll to projects" class="scrollHint" href="#projects">
+            <span>Projects</span>
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                 stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
     </div>
 
     <section aria-labelledby="projectsHeading" class="projects" id="projects">
@@ -132,7 +114,7 @@
             <article class="project wip">
                 <h4>Bayesian Local Projections <span class="badge">TBC</span></h4>
                 <p>Web tool for the Bayesian local projections of Javed and Morley (2026): impulse responses with shape priors, from your own data or FRED series.</p>
-                <span class="tags"><span>React</span><span>Python</span><span>MATLAB &rarr; C</span><span>In progress</span></span>
+                <span class="tags"><span>React</span><span>Python</span><span>MATLAB &rarr; C</span></span>
             </article>
             <a class="project" href="https://bnfiltering.com/" rel="noopener" target="_blank">
                 <h4>Beveridge-Nelson Filter</h4>
@@ -142,7 +124,7 @@
             <a class="project" href="https://outputgapnow.com/" rel="noopener" target="_blank">
                 <h4>Nowcasting the US Output Gap</h4>
                 <p>Live nowcasts of the US output gap from a mixed-frequency Bayesian VAR, built with Dr. Benjamin Wong, Prof. James Morley and Prof. Tino Berger.</p>
-                <span class="tags"><span>JavaScript</span><span>C</span><span>MATLAB</span><span>Live site</span></span>
+                <span class="tags"><span>JavaScript</span><span>MATLAB &rarr; C</span><span>Live site</span></span>
             </a>
         </div>
 
@@ -201,95 +183,5 @@
         <a class="more" href="https://github.com/crstnn?tab=repositories" rel="noopener" target="_blank">See all repositories →</a>
     </section>
 </main>
-<footer class="siteFooter">© <span id="year">2026</span> Cristian Corrado</footer>
-<script>
-    (function () {
-        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var cards = document.querySelectorAll('.project');
-
-        // Reveal cards as they scroll into view, staggered left-to-right.
-        if (!reduceMotion && 'IntersectionObserver' in window) {
-            document.documentElement.classList.add('js-reveal');
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (!entry.isIntersecting) return;
-                    var index = Array.prototype.indexOf.call(cards, entry.target);
-                    entry.target.style.transitionDelay = (index % 3) * 90 + 'ms';
-                    entry.target.classList.add('visible');
-                    // Drop the stagger afterwards so hover effects respond instantly.
-                    entry.target.addEventListener('transitionend', function () {
-                        entry.target.style.transitionDelay = '';
-                    }, {once: true});
-                    observer.unobserve(entry.target);
-                });
-            }, {threshold: 0.15});
-            cards.forEach(function (card) {
-                observer.observe(card);
-            });
-        }
-
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Scroll hint: hidden while the projects are on screen, back again at the top.
-        var hint = document.querySelector('.scrollHint');
-        if ('IntersectionObserver' in window) {
-            new IntersectionObserver(function (entries) {
-                hint.classList.toggle('hidden', entries[0].isIntersecting);
-            }).observe(document.getElementById('projects'));
-        }
-
-        // Email: the address (base64 of it reversed) is only decoded when a person clicks,
-        // then shown with Copy and Open mail actions.
-        var emailButton = document.querySelector('.links button.email');
-        var panel = document.getElementById('emailPanel');
-        var addressEl = panel.querySelector('.emailAddress');
-        var copyButton = panel.querySelector('.copyEmail');
-        var openMail = panel.querySelector('.openMail');
-        var status = document.getElementById('emailStatus');
-        var address = null;
-        var resetTimer;
-
-        emailButton.addEventListener('click', function () {
-            if (!address) {
-                address = atob(emailButton.dataset.contact).split('').reverse().join('');
-                addressEl.textContent = address;
-                openMail.href = 'mailto:' + address;
-            }
-            var open = emailButton.getAttribute('aria-expanded') !== 'true';
-            emailButton.setAttribute('aria-expanded', String(open));
-            panel.classList.toggle('open', open);
-        });
-
-        function feedback(message) {
-            copyButton.textContent = message;
-            status.textContent = message;
-            clearTimeout(resetTimer);
-            resetTimer = setTimeout(function () {
-                copyButton.textContent = 'Copy';
-                status.textContent = '';
-            }, 2000);
-        }
-
-        function selectAddress() {
-            // Clipboard unavailable: select the text so it can be copied by hand.
-            var range = document.createRange();
-            range.selectNodeContents(addressEl);
-            var selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            feedback('Selected');
-        }
-
-        copyButton.addEventListener('click', function () {
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(address).then(function () {
-                    feedback('Copied ✓');
-                }, selectAddress);
-            } else {
-                selectAddress();
-            }
-        });
-    })();
-</script>
 </body>
 </html>
