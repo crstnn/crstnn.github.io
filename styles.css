@@ -1,9 +1,8 @@
 /* ---------- Base ---------- */
 
-/* Everything is sized in rem, so growing the root size scales the whole layout
-   on wide screens (16px up to ~1440px wide, reaching 22px at ~2800px). */
+/* Text grows gently on wide screens: 16px up to ~1600px wide, at most 18px. */
 html {
-    font-size: clamp(1rem, 0.5rem + 0.5vw, 1.375rem);
+    font-size: clamp(1rem, 0.8rem + 0.2vw, 1.125rem);
     scroll-behavior: smooth;
 }
 
@@ -319,7 +318,7 @@ h1 {
 
 .projects {
     width: 100%;
-    max-width: 64rem;
+    max-width: clamp(64rem, 52vw, 74rem); /* wider on big screens, never room for a 4th column */
     margin: 2rem 0 4rem;
     scroll-margin-top: 2rem;
     text-align: center;
