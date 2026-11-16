@@ -78,36 +78,41 @@
 
     <section aria-labelledby="projectsHeading" class="projects" id="projects">
         <h2 id="projectsHeading">Projects</h2>
+        <h3 class="groupHeading">Econometrics research software</h3>
         <div class="projectGrid">
             <a class="project" href="https://bnfiltering.com/" rel="noopener" target="_blank">
-                <h3>Beveridge-Nelson Filter</h3>
-                <p>Web interface (frontend and backend) for the Beveridge-Nelson filter, including the full BN filter model in R.</p>
-                <span class="tags"><span>JavaScript</span><span>R</span><span>Live site</span></span>
+                <h4>Beveridge-Nelson Filter</h4>
+                <p>Web tool for the Beveridge-Nelson filter, which splits a time series into trend and cycle. Runs the full BN filter model in R behind a Python backend.</p>
+                <span class="tags"><span>R</span><span>Python</span><span>JavaScript</span><span>Live site</span></span>
             </a>
             <a class="project" href="https://outputgapnow.com/" rel="noopener" target="_blank">
-                <h3>Nowcasting the US Output Gap</h3>
-                <p>Frontend for a project that nowcasts the US output gap.</p>
-                <span class="tags"><span>JavaScript</span><span>Live site</span></span>
+                <h4>Nowcasting the US Output Gap</h4>
+                <p>Live nowcasts of the US output gap from a mixed-frequency Bayesian VAR, built with Dr. Benjamin Wong, Prof. James Morley and Prof. Tino Berger.</p>
+                <span class="tags"><span>JavaScript</span><span>C</span><span>MATLAB</span><span>Live site</span></span>
+            </a>
+            <article class="project wip">
+                <h4>Bayesian Local Projections <span class="badge">TBC</span></h4>
+                <p>Web tool for the Bayesian local projections of Javed and Morley (2026): impulse responses with shape priors, from your own data or FRED series.</p>
+                <span class="tags"><span>React</span><span>Python</span><span>MATLAB &rarr; C</span><span>In progress</span></span>
+            </article>
+        </div>
+
+        <h3 class="groupHeading">Other projects</h3>
+        <div class="projectGrid">
+            <a class="project" href="https://github.com/crstnn/jsinspect-plus" rel="noopener" target="_blank">
+                <h4>jsinspect-plus</h4>
+                <p>Maintained fork of jsinspect, which finds copy-pasted and structurally similar code. Moved to Babel's modern parser with ES2020, TypeScript and TSX support.</p>
+                <span class="tags"><span>JavaScript</span><span>Open source</span><span>npm</span></span>
             </a>
             <a class="project" href="https://github.com/crstnn/UkkonensSuffixTree" rel="noopener" target="_blank">
-                <h3>Ukkonen's Suffix Tree</h3>
+                <h4>Ukkonen's Suffix Tree</h4>
                 <p>Linear-time suffix tree construction, with generalised and non-generalised versions.</p>
                 <span class="tags"><span>Python</span><span>Algorithms</span></span>
             </a>
-            <a class="project" href="https://github.com/crstnn/LZ77Compression" rel="noopener" target="_blank">
-                <h3>LZ77 Compression</h3>
-                <p>Lempel-Ziv 77 compression using Huffman and Elias omega coding.</p>
-                <span class="tags"><span>Python</span><span>Compression</span></span>
-            </a>
             <a class="project" href="https://github.com/crstnn/WirelessBushfireSensorNetwork" rel="noopener" target="_blank">
-                <h3>Wireless Bushfire Sensor Network</h3>
+                <h4>Wireless Bushfire Sensor Network</h4>
                 <p>Simulated sensor network that talks to satellites to detect bushfires, built with POSIX threads and OpenMPI.</p>
-                <span class="tags"><span>C</span><span>MPI</span></span>
-            </a>
-            <a class="project" href="https://github.com/crstnn/Pong" rel="noopener" target="_blank">
-                <h3>Pong + Breakout</h3>
-                <p>Pong with a Breakout mode, written in a functional style with RxJS Observables.</p>
-                <span class="tags"><span>TypeScript</span><span>RxJS</span></span>
+                <span class="tags"><span>C</span><span>MPI</span><span>Parallel computing</span></span>
             </a>
         </div>
         <a class="more" href="https://github.com/crstnn?tab=repositories" rel="noopener" target="_blank">See all repositories →</a>
