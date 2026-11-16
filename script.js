@@ -27,6 +27,21 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.querySelectorAll('.project').forEach((card) => revealObserver.observe(card));
 }
 
+// Cards for repos that may still be private: drop the link while GitHub reports
+// the repo as missing, so visitors never land on a 404. Once the repo is public
+// the link works with no change here.
+document.querySelectorAll('.project[data-repo]').forEach(async (card) => {
+    try {
+        const response = await fetch(`https://api.github.com/repos/${card.dataset.repo}`);
+        if (response.status === 404) {
+            card.removeAttribute('href');
+            card.removeAttribute('target');
+        }
+    } catch {
+        // Network or rate-limit trouble: leave the link as it is.
+    }
+});
+
 // Scroll hint: hidden while the projects are on screen.
 const hint = document.querySelector('.scrollHint');
 new IntersectionObserver(([entry]) => {

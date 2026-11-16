@@ -433,7 +433,7 @@ h1 {
 
 /* ---------- Hover and focus ---------- */
 
-a.project:focus-visible {
+a.project[href]:focus-visible {
     transform: translateY(-0.1875rem);
     border-color: #3a94b8;
     box-shadow: 0 0.5rem 1.5rem rgba(38, 71, 138, 0.35);
@@ -446,14 +446,14 @@ a.project:focus-visible {
         box-shadow: 0 0.5rem 0.9375rem rgba(0, 0, 0, 0.2);
     }
 
-    a.project:hover {
+    a.project[href]:hover {
         transform: translateY(-0.1875rem);
         border-color: #3a94b8;
         box-shadow: 0 0.5rem 1.5rem rgba(38, 71, 138, 0.35);
     }
 }
 
-.links > a:focus-visible, .links > button:focus-visible, a.project:focus-visible, .more:focus-visible, .scrollHint:focus-visible {
+.links > a:focus-visible, .links > button:focus-visible, a.project[href]:focus-visible, .more:focus-visible, .scrollHint:focus-visible {
     outline: 0.125rem solid #8cc8e0;
     outline-offset: 0.1875rem;
 }
